@@ -3,292 +3,550 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart IoT Irrigation System | Tejas & Kayansh</title>
+    <title>Automatic Water Irrigation System | IoT Smart Plant Watering</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
-        :root {
-            --primary: #2c3e50;
-            --accent: #27ae60;
-            --accent-dark: #229954;
-            --bg: #ecf0f1;
-            --text: #34495e;
-            --shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: var(--text);
-            background-color: var(--bg);
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
-        
+
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
-        
+
         header {
-            background: linear-gradient(135deg, #2c3e50 0%, #27ae60 100%);
-            color: white;
-            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px 0;
             text-align: center;
-            border-radius: 0 0 25px 25px;
+            border-radius: 15px;
             margin-bottom: 30px;
-            box-shadow: var(--shadow);
-            position: relative;
-        }
-        
-        h1 { margin: 0; font-size: 2.8em; letter-spacing: -1px; }
-        .subtitle { font-weight: 300; font-size: 1.3em; opacity: 0.95; margin-top: 10px; }
-        
-        .action-buttons {
-            margin-top: 30px;
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            padding: 12px 30px;
-            background: white;
-            color: var(--primary);
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid white;
-        }
-        
-        .btn:hover {
-            background: transparent;
-            color: white;
-            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
-        html { scroll-behavior: smooth; }
-        
-        /* Gallery */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
         }
-        
-        .photo-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: 0.3s;
+
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
         }
-        
-        .photo-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-        
-        .photo-caption { padding: 20px; text-align: center; }
-        .photo-caption strong { display: block; color: var(--primary); font-size: 1.1em; }
-        
-        section {
-            background: white;
-            padding: 40px;
-            margin-bottom: 30px;
-            border-radius: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        
-        h2 {
-            color: var(--primary);
-            border-left: 5px solid var(--accent);
-            padding-left: 15px;
-            margin-bottom: 25px;
-        }
-        
-        .code-block {
-            background: #1e1e1e;
-            color: #d4d4d4;
-            padding: 25px;
+
+        .team-info {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
             border-radius: 10px;
-            overflow-x: auto;
-            font-family: 'Consolas', monospace;
-            font-size: 0.9em;
-            border: 1px solid #333;
+            margin: 20px 0;
         }
-        
-        .specs-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-        
-        .specs-table th, .specs-table td {
-            padding: 15px;
-            border-bottom: 1px solid #eee;
-            text-align: left;
-        }
-        
-        .specs-table th { background: #f8f9fa; color: var(--primary); }
 
-        .feature-list { list-style: none; }
-        .feature-list li {
-            padding: 12px;
-            margin-bottom: 8px;
-            background: #f9fdfa;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
+        .team-info h3 {
+            color: #764ba2;
+            margin-bottom: 10px;
         }
-        
-        .feature-list li:before {
-            content: "✔";
-            color: var(--accent);
-            margin-right: 15px;
+
+        .section {
+            background: white;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #764ba2;
+            padding-bottom: 10px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .tech-badge {
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
             font-weight: bold;
         }
 
-        .qr-section {
-            text-align: center;
-            border: 2px dashed var(--accent);
-            padding: 30px;
-            border-radius: 20px;
+        .code-section {
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
         }
-        
-        .qr-img { width: 180px; height: 180px; margin: 20px 0; }
+
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            margin: 10px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        .wiring-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .wiring-table th,
+        .wiring-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .wiring-table th {
+            background: #667eea;
+            color: white;
+        }
+
+        .wiring-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
 
         footer {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
             text-align: center;
-            padding: 40px 0;
-            color: #7f8c8d;
-            border-top: 1px solid #ddd;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .image-placeholder {
+            background: #f0f0f0;
+            border: 2px dashed #667eea;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            margin: 20px 0;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-
-<header>
     <div class="container">
-        <h1>🌱 Smart IoT Irrigation</h1>
-        <p class="subtitle">An Automated Solution by Tejas Niranjan & Kavyansh Gupta</p>
-        <div class="action-buttons">
-            <a href="#logic" class="btn">💻 System Logic</a>
-            <a href="#hardware" class="btn">🛠️ Hardware</a>
-            <a href="#live" class="btn">📱 Live Link</a>
+        <header>
+            <h1>🌱 AUTOMATIC WATER IRRIGATION</h1>
+            <p class="subtitle">IoT-Based Smart Plant Watering System with ESP8266</p>
+            <p class="subtitle">Software, Electronics, and Documentation (Outlook and Structural Designing)</p>
+        </header>
+
+        <div class="team-info">
+            <h3>👥 Project Team</h3>
+            <p><strong>Team Members:</strong></p>
+            <ul style="list-style: none; padding: 10px;">
+                <li>📌 <strong>Tejas Niranjan</strong> - Software & Electronics</li>
+                <li>📌 <strong>Kayansh Gupta</strong> - Outlook & Structural Designing</li>
+            </ul>
+            <p><strong>Submitted to:</strong> Mrs. Nivedita Sharma</p>
         </div>
+
+        <section class="section">
+            <h2>📖 Project Overview</h2>
+            <p>An intelligent IoT-based automatic plant watering system that monitors soil moisture levels in real-time and controls water irrigation automatically. The system features remote control via Sinric Pro app, voice assistant integration, and live LCD display.</p>
+            
+            <div class="image-placeholder">
+                📸 Add your project photos here
+                <br><small>(Circuit, Setup, Working Demo)</small>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>✨ Key Features</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">💧</div>
+                    <h3>Auto Mode</h3>
+                    <p>Automatically waters plants when soil moisture drops below threshold</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>IoT Control</h3>
+                    <p>Control via Sinric Pro app from anywhere in the world</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🗣️</div>
+                    <h3>Voice Control</h3>
+                    <p>Works with Alexa & Google Assistant</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Live Display</h3>
+                    <p>16x2 LCD shows real-time moisture and pump status</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Real-Time Updates</h3>
+                    <p>Sinric updates every 5 seconds</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Manual Override</h3>
+                    <p>Switch between auto and manual modes instantly</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🛠️ Hardware Components</h2>
+            <ul style="line-height: 2;">
+                <li>✓ ESP8266 NodeMCU (WiFi Microcontroller)</li>
+                <li>✓ Capacitive Soil Moisture Sensor</li>
+                <li>✓ 1-Channel 5V Relay Module (Active HIGH)</li>
+                <li>✓ 16x2 LCD Display with I2C Module (0x27)</li>
+                <li>✓ 5V/12V Water Pump</li>
+                <li>✓ Power Supply (5V/12V based on pump)</li>
+                <li>✓ Connecting Wires & Breadboard</li>
+                <li>✓ Water Reservoir & Tubing</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>💻 Technology Stack</h2>
+            <div class="tech-stack">
+                <span class="tech-badge">ESP8266</span>
+                <span class="tech-badge">Arduino IDE</span>
+                <span class="tech-badge">Sinric Pro</span>
+                <span class="tech-badge">C/C++</span>
+                <span class="tech-badge">WiFi</span>
+                <span class="tech-badge">IoT</span>
+                <span class="tech-badge">I2C Protocol</span>
+                <span class="tech-badge">Alexa/Google Home</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🔌 Wiring Diagram</h2>
+            <table class="wiring-table">
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Pin</th>
+                        <th>ESP8266 Connection</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="4"><strong>LCD I2C</strong></td>
+                        <td>VCC</td>
+                        <td>5V / 3.3V</td>
+                    </tr>
+                    <tr>
+                        <td>GND</td>
+                        <td>GND</td>
+                    </tr>
+                    <tr>
+                        <td>SDA</td>
+                        <td>D2 (GPIO4)</td>
+                    </tr>
+                    <tr>
+                        <td>SCL</td>
+                        <td>D1 (GPIO5)</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3"><strong>Relay Module</strong></td>
+                        <td>VCC</td>
+                        <td>5V</td>
+                    </tr>
+                    <tr>
+                        <td>GND</td>
+                        <td>GND</td>
+                    </tr>
+                    <tr>
+                        <td>IN</td>
+                        <td>D5 (GPIO14)</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3"><strong>Moisture Sensor</strong></td>
+                        <td>VCC</td>
+                        <td>3.3V</td>
+                    </tr>
+                    <tr>
+                        <td>GND</td>
+                        <td>GND</td>
+                    </tr>
+                    <tr>
+                        <td>AOUT</td>
+                        <td>A0</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3"><strong>Relay Power</strong></td>
+                        <td>COM</td>
+                        <td>+12V (Power Supply)</td>
+                    </tr>
+                    <tr>
+                        <td>NO</td>
+                        <td>Pump (+)</td>
+                    </tr>
+                    <tr>
+                        <td>NC</td>
+                        <td>Not Connected</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pump (-)</strong></td>
+                        <td>-</td>
+                        <td>GND (Power Supply)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><strong>⚠️ Important:</strong> Connect ESP8266 GND and Power Supply GND together (common ground)!</p>
+        </section>
+
+        <section class="section">
+            <h2>📋 How It Works</h2>
+            <ol style="line-height: 2;">
+                <li><strong>Moisture Monitoring:</strong> Capacitive sensor continuously reads soil moisture level</li>
+                <li><strong>Data Processing:</strong> ESP8266 converts analog readings to percentage (0-100%)</li>
+                <li><strong>LCD Display:</strong> Shows real-time moisture, pump status, and mode</li>
+                <li><strong>Auto Watering:</strong> When moisture drops below 68%, pump turns ON automatically</li>
+                <li><strong>Pump Control:</strong> Relay switches pump ON/OFF based on moisture threshold</li>
+                <li><strong>IoT Updates:</strong> Sinric Pro receives updates every 5 seconds</li>
+                <li><strong>Remote Control:</strong> Users can control via app or voice commands</li>
+                <li><strong>Manual Override:</strong> App control automatically switches to manual mode</li>
+            </ol>
+        </section>
+
+        <section class="section">
+            <h2>🎯 System Specifications</h2>
+            <div class="code-section">
+                <h4>Moisture Thresholds (Calibrated for ESP8266):</h4>
+                <ul>
+                    <li><strong>VERY_DRY:</strong> 830 (ADC value) → Soil needs immediate watering</li>
+                    <li><strong>NEITHER_DRY_OR_WET:</strong> 680 → Threshold for auto mode</li>
+                    <li><strong>VERY_WET:</strong> 330 → Soil is adequately watered</li>
+                </ul>
+            </div>
+            <div class="code-section">
+                <h4>Update Intervals:</h4>
+                <ul>
+                    <li><strong>LCD Update:</strong> Every 1 second (only changed values to prevent flickering)</li>
+                    <li><strong>Sinric Update:</strong> Every 5 seconds</li>
+                    <li><strong>Auto Watering Check:</strong> Every 2 seconds</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>⚙️ Setup Instructions</h2>
+            <h3>1. Install Required Libraries</h3>
+            <pre>
+// Arduino IDE → Library Manager → Install:
+- ESP8266WiFi
+- SinricPro
+- LiquidCrystal_PCF8574
+- Wire (built-in)
+- CapacitiveSoilMoistureSensor
+            </pre>
+
+            <h3>2. Configure Credentials</h3>
+            <pre>
+// In the code, update:
+#define APP_KEY    "your-sinric-app-key"
+#define APP_SECRET "your-sinric-app-secret"
+#define SOIL_DEVICE_ID  "your-soil-sensor-id"
+#define PUMP_DEVICE_ID  "your-pump-switch-id"
+#define AUTO_MODE_DEVICE_ID "your-auto-mode-id"
+
+#define SSID "your-wifi-name"
+#define PASS "your-wifi-password"
+            </pre>
+
+            <h3>3. Upload Code</h3>
+            <ul style="line-height: 2;">
+                <li>Open Arduino IDE</li>
+                <li>Select Board: <strong>NodeMCU 1.0 (ESP-12E Module)</strong></li>
+                <li>Select correct COM Port</li>
+                <li>Click Upload</li>
+            </ul>
+
+            <h3>4. Calibrate Sensor</h3>
+            <pre>
+1. Open Serial Monitor (115200 baud)
+2. Note ADC value when sensor is in DRY soil
+3. Note ADC value when sensor is in WET soil
+4. Update calibration values in code
+5. Re-upload code
+            </pre>
+        </section>
+
+        <section class="section">
+            <h2>📱 Sinric Pro Setup</h2>
+            <ol style="line-height: 2;">
+                <li>Create account at <a href="https://sinric.pro" target="_blank">sinric.pro</a></li>
+                <li>Create 3 devices:
+                    <ul>
+                        <li><strong>Soil Sensor</strong> - Type: Contact Sensor</li>
+                        <li><strong>Pump</strong> - Type: Switch</li>
+                        <li><strong>Auto Mode</strong> - Type: Switch</li>
+                    </ul>
+                </li>
+                <li>Copy Device IDs and paste in code</li>
+                <li>Link Sinric Pro with Alexa/Google Home app</li>
+                <li>Test voice commands: "Alexa, turn on the pump"</li>
+            </ol>
+        </section>
+
+        <section class="section">
+            <h2>🎮 Usage Guide</h2>
+            <h3>Auto Mode (Default):</h3>
+            <ul style="line-height: 2;">
+                <li>System monitors soil moisture automatically</li>
+                <li>When moisture &lt; 30%, pump turns ON</li>
+                <li>When moisture &gt; 40% (hysteresis), pump turns OFF</li>
+                <li>LCD shows "AUTO" mode</li>
+            </ul>
+
+            <h3>Manual Mode:</h3>
+            <ul style="line-height: 2;">
+                <li>Control pump via Sinric app</li>
+                <li>Use voice commands</li>
+                <li>Auto mode automatically disables</li>
+                <li>LCD shows "MANU" mode</li>
+            </ul>
+
+            <h3>Re-enable Auto Mode:</h3>
+            <ul style="line-height: 2;">
+                <li>Toggle "Auto Mode" switch in Sinric app</li>
+                <li>Or restart the ESP8266</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>🐛 Troubleshooting</h2>
+            <div class="code-section">
+                <h4>LCD Not Displaying:</h4>
+                <ul>
+                    <li>Check I2C address (try 0x3F if 0x27 doesn't work)</li>
+                    <li>Verify SDA/SCL connections</li>
+                    <li>Adjust LCD contrast potentiometer</li>
+                </ul>
+            </div>
+            <div class="code-section">
+                <h4>WiFi Not Connecting:</h4>
+                <ul>
+                    <li>Check SSID and password</li>
+                    <li>Ensure 2.4GHz WiFi (ESP8266 doesn't support 5GHz)</li>
+                    <li>Move closer to router</li>
+                </ul>
+            </div>
+            <div class="code-section">
+                <h4>Pump Not Working:</h4>
+                <ul>
+                    <li>Verify relay connections</li>
+                    <li>Check if relay LED lights up</li>
+                    <li>Ensure common ground between ESP and power supply</li>
+                    <li>Test pump with direct power connection</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🚀 Future Enhancements</h2>
+            <ul style="line-height: 2;">
+                <li>☐ Add temperature and humidity sensors</li>
+                <li>☐ Implement scheduling (water at specific times)</li>
+                <li>☐ Add battery backup with solar charging</li>
+                <li>☐ Multiple zone control for different plants</li>
+                <li>☐ Data logging and analytics dashboard</li>
+                <li>☐ Email/SMS notifications for low moisture</li>
+                <li>☐ Weather API integration (skip watering if rain predicted)</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>📄 License</h2>
+            <p>This project is open-source and available under the MIT License.</p>
+        </section>
+
+        <section class="section">
+            <h2>🔗 Quick Links</h2>
+            <div style="text-align: center;">
+                <a href="#" class="btn">📥 Download Code</a>
+                <a href="#" class="btn">📺 Watch Demo</a>
+                <a href="https://sinric.pro" class="btn" target="_blank">🌐 Sinric Pro</a>
+                <a href="#" class="btn">📖 Documentation</a>
+            </div>
+        </section>
+
+        <footer>
+            <h3>👨‍💻 Project by Tejas Niranjan & Kayansh Gupta</h3>
+            <p>Submitted to: Mrs. Nivedita Sharma</p>
+            <p>© 2024 Automatic Water Irrigation System | IoT Smart Agriculture</p>
+            <p style="margin-top: 10px;">
+                <a href="https://github.com/yourusername/automatic-water-irrigation" style="color: #667eea; text-decoration: none;">⭐ Star on GitHub</a>
+            </p>
+        </footer>
     </div>
-</header>
-
-<div class="container">
-
-    <div class="gallery-grid">
-        <div class="photo-card">
-            <img src="https://i.ibb.co/Fq3qwWck/IMG-20251228-220642.jpg" alt="Project Overview">
-            <div class="photo-caption"><strong>System Prototype</strong>Complete assembly with plants and controller.</div>
-        </div>
-        <div class="photo-card">
-            <img src="https://i.ibb.co/0VhKdWH8/IMG-20251228-220718.jpg" alt="Circuit Detail">
-            <div class="photo-caption"><strong>Core Electronics</strong>NodeMCU and Relay configuration.</div>
-        </div>
-        <div class="photo-card">
-            <img src="https://i.ibb.co/sr3003Y/IMG-20251228-220635.jpg" alt="Pump Close-up">
-            <div class="photo-caption"><strong>Water Management</strong>Submersible pump in reservoir.</div>
-        </div>
-    </div>
-
-    <section id="abstract">
-        <h2>📖 Project Abstract</h2>
-        <p>
-            This intelligent irrigation system utilizes an <strong>ESP8266 NodeMCU</strong> to monitor soil moisture via a capacitive sensor. 
-            The system operates in two primary modes: <strong>Automatic Mode</strong>, which uses hysteresis logic to activate a water pump when moisture levels drop below 680 ADC, and <strong>Manual Mode</strong>, which allows for global remote control via the Sinric Pro IoT platform. 
-            Local feedback is provided via a flicker-free 16x2 LCD display.
-        </p>
-    </section>
-
-    <section id="hardware">
-        <h2>🛠️ Hardware & Wiring</h2>
-        
-        <table class="specs-table">
-            <thead>
-                <tr>
-                    <th>Component</th>
-                    <th>Connection</th>
-                    <th>Function</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>ESP8266 NodeMCU</td>
-                    <td>Main Hub</td>
-                    <td>WiFi & Logic Controller</td>
-                </tr>
-                <tr>
-                    <td>Capacitive Sensor</td>
-                    <td>Pin A0</td>
-                    <td>Moisture Detection</td>
-                </tr>
-                <tr>
-                    <td>Relay Module</td>
-                    <td>Pin D5 (GPIO14)</td>
-                    <td>Pump Switching</td>
-                </tr>
-                <tr>
-                    <td>16x2 LCD (I2C)</td>
-                    <td>D2 (SDA), D1 (SCL)</td>
-                    <td>Status Display</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <section id="logic">
-        <h2>💻 Core Firmware Logic</h2>
-        <div class="code-block">
-<pre>
-void autoWateringControl(int rawValue) {
-  if (!autoModeEnabled) return;
-
-  // DRY Condition (Hysteresis Logic)
-  if (rawValue > 680 && !autoPumpRunning) {
-    digitalWrite(RELAY_PIN, HIGH);
-    autoPumpRunning = true;
-    pumpSwitch.sendPowerStateEvent(true);
-  }
-  // WET Condition
-  else if (rawValue <= 680 && autoPumpRunning) {
-    digitalWrite(RELAY_PIN, LOW);
-    autoPumpRunning = false;
-    pumpSwitch.sendPowerStateEvent(false);
-  }
-}
-</pre>
-        </div>
-    </section>
-
-    <section id="live" class="qr-section">
-        <h2>📱 PROJECT IS LIVE!</h2>
-        <p>Scan the QR code to visit the documentation page on GitHub</p>
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://tejasblynk.github.io/IoT-Based-Irrigation/" alt="Project QR Code" class="qr-img">
-        <br>
-        <a href="https://tejasblynk.github.io/IoT-Based-Irrigation/" class="btn" style="background: var(--accent); color: white;">Visit Website</a>
-    </section>
-
-    <footer>
-        <p><strong>Developed by Tejas Niranjan & Kavyansh Gupta</strong></p>
-        <p>Electronics & IoT Excellence • 2025</p>
-        <p style="font-size: 0.8em; margin-top: 10px;">Submitted to: Mrs. Nivedita Sharma</p>
-    </footer>
-
-</div>
-
 </body>
-          </html>
-          
+                    </html>
